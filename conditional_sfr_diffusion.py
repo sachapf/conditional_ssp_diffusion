@@ -485,6 +485,20 @@ def train_conditional(save_directory, data_directory=None, normalize=False, line
 
 colours = ["deepskyblue", "firebrick", "orange", "pink", "blueviolet"]
 def sample_conditional_model(save_directory, normalize=False, linear_test=False, time_only=False, log_scale=True):
+    """
+    Samples a conditional model and plots the results.
+    Args:
+        save_directory (str): The directory where the model checkpoints and data are saved.
+        normalize (bool, optional): If True, the samples will be un-normalized to compare to the original data. Default is False.
+        linear_test (bool, optional): If True, the wavelengths for the linear data test are used. Default is False.
+        time_only (bool, optional): If True, the model is only conditioned on time. Default is False.
+        log_scale (bool, optional): If True, the x-axis of the plots will be in log scale. Default is True.
+    Raises:
+        FileNotFoundError: If the wavelength file is not found in the save_directory.
+    Returns:
+        None
+    """
+
     checkpoints_directory = save_directory + checkpoints_folder
     plot_dir = save_directory + plot_folder
 
