@@ -544,8 +544,8 @@ def sample_conditional_model(save_directory, normalize=False, linear_test=False,
         min_idx += 1
 
     # plot all train samples vs wave
-    ssp_train = ssp_train.cpu().numpy()
-    ssp_test = ssp_test.cpu().numpy()
+    ssp_train = ssp_train.cpu().numpy().squeeze()
+    ssp_test = ssp_test.cpu().numpy().squeeze()
 
     if not linear_test and log_scale:
         plt.xscale('log')
